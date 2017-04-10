@@ -21,6 +21,13 @@ class PagesController < ApplicationController
     redirect_to "/welcome"
   end
 
+  def secrets
+    unless params[:magic_word] == 'mayonnaise'
+      flash[:alert] = "Sorry, you're not authorized to see that page!"
+      redirect_to "/welcome"
+    end
+  end
+
 private#########################################################################
 
   def set_kitten_url
