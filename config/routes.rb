@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
   get '/contest' => 'pages#contest'
 
-  get '/secrets/:magic_word' => 'pages#secrets'
-  get '/kitten/:size' => 'pages#kitten'
-  get '/kittens/:size' => 'pages#kittens'
+  get '/secrets/:magic_word' => 'pages#secrets', as: 'secret'
+  get '/kitten/:size' => 'pages#kitten', as: 'kitten'
+  get '/omg_kittens/:size' => 'pages#kittens', as: 'kittens'
 
 end
